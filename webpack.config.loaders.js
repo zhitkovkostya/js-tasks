@@ -1,3 +1,5 @@
+let path = require('path');
+
 module.exports = function() {
     return [
         {
@@ -7,7 +9,7 @@ module.exports = function() {
         },
         {
             test: /\.hbs/,
-            loader: 'handlebars-loader'
+            loader: 'handlebars-loader?helperDirs[]=' + __dirname + '/helpers'
         },
         {
             test: /\.(jpe?g|png|gif|svg|)$/i,

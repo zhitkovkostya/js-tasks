@@ -3,7 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <title>{{htmlWebpackPlugin.options.title}}</title>
+  <script src="https://vk.com/js/api/openapi.js?141" type="text/javascript"></script>
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,600" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="src/css/drugofilter.css">
 </head>
 <body>
+  <div class="modal js-modal">
+    <div class="modal__header">
+      <div class="modal__title">
+        Выберите друзей
+      </div>
+      <div class="modal__close">
+        <button class="button js-modal-close">
+          <span class="button__icon">
+            <i class="fa fa-close"></i>
+          </span>
+        </button>
+      </div>
+    </div>
+    <div class="modal__filter">
+      <div class="filter">
+        <div class="filter__column">
+          <input type="text" class="filter__input js-filter" data-filter="idle" placeholder="Начните вводить имя друга">
+        </div>
+        <div class="filter__column">
+          <input type="text" class="filter__input js-filter" data-filter="selected" placeholder="Начните вводить имя друга">
+        </div>
+      </div>
+    </div>
+    <div class="modal__body">
+      <div class="modal__column">
+        <h2 class="modal__heading">Ваши друзья</h2>
+        <ul class="friends__list js-friends-list js-friends-list-idle"></ul>
+      </div>
+      <div class="modal__column">
+        <h2 class="modal__heading">Друзья в списке</h2>
+        <ul class="friends__list js-friends-list js-friends-list-selected"></ul>
+      </div>
+    </div>
+    <footer class="modal__footer">
+      <button class="modal__button js-save">Сохранить</button>
+    </footer>
+  </div>
 </body>
 </html>
